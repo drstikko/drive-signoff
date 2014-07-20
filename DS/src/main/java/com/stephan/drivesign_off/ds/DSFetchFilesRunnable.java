@@ -63,11 +63,11 @@ public class DSFetchFilesRunnable extends DSGoogleDriveOperation {
 
             // create a new request which finds all spreadsheets on the users Google Drive.
             Drive.Files.List queryRequest = this._googleDriveService.files().list();
-            //queryRequest.setQ("mimeType='application/vnd.google-apps.spreadsheet' and properties has {key='"+ DSInsertFileRunnable.SPREADSHEET_FILE_PROPERTY_KEY + "' and value='" + DSInsertFileRunnable.SPREADSHEET_FILE_PROPERTY_VALUE + "' and visibility='PRIVATE'}");
+            queryRequest.setQ("mimeType='application/vnd.google-apps.spreadsheet' and properties has {key='"+ DSInsertFileRunnable.SPREADSHEET_FILE_PROPERTY_KEY + "' and value='" + DSInsertFileRunnable.SPREADSHEET_FILE_PROPERTY_VALUE + "' and visibility='PRIVATE'}");
 
             // execute the request and copy all files to a Java array list
-           // FileList listOfFiles = queryRequest.execute();
-            FileList listOfFiles=this._googleDriveService.files().list().setQ("mimeType='application/vnd.google-apps.folder'").execute();
+            FileList listOfFiles = queryRequest.execute();
+           // FileList listOfFiles=this._googleDriveService.files().list().setQ("mimeType='application/vnd.google-apps.folder'").execute();
            // for(File fl: folders.getItems()){
            //     Log.v(TAG+" fOLDER name:",fl.getTitle());
            // }

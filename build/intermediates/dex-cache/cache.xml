@@ -2,24 +2,6 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-api-client-1.18.0-rc-dd1c94fe2c3cc7c0df8f6c310324faf3a61a5703.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.18.0-rc/45b0d00b78197d8a3047751443c09538117d188b/google-api-client-1.18.0-rc.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="45b0d00b78197d8a3047751443c09538117d188b"/>
-    <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-http-client-1.18.0-rc-4c9f4c305bd78a77c6a23de4822c34b584dd13f9.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.18.0-rc/880ad30d2b249a7591c195c2392646f1b146c139/google-http-client-1.18.0-rc.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="880ad30d2b249a7591c195c2392646f1b146c139"/>
-    <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/servlet-api-2.5-20081211-f780f66ccbfe9606cd7299f3ded8894c808ae23e.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/org.mortbay.jetty/servlet-api/2.5-20081211/22bff70037e1e6fa7e6413149489552ee2064702/servlet-api-2.5-20081211.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="22bff70037e1e6fa7e6413149489552ee2064702"/>
-    <item
         dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/classes-ccc2a5158fe49ab2347cda87ee8bd614511f4d1b.jar"
         jar="/Users/dave/DriveSign-off/DS/build/intermediates/exploded-aar/com.google.android.gms/play-services/5.0.77/classes.jar"
         jumboMode="false"
@@ -37,6 +19,48 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="b704ff80c682dab0f64a784eaf1a9ed7d58b531d"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-api-client-android-1.18.0-rc-17c9af8da3789d70d246c2e767a95db9b606bfc4.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.18.0-rc/5a61d590275464895d783fb1612418964e20162e/google-api-client-android-1.18.0-rc.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="5a61d590275464895d783fb1612418964e20162e"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-http-client-gson-1.18.0-rc-393a42fc59e4b7c33d82d2567ff6db4921d9508f.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.18.0-rc/82647ac9ebf591b4517f8863ed4c84367cde0728/google-http-client-gson-1.18.0-rc.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="82647ac9ebf591b4517f8863ed4c84367cde0728"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/jsr305-1.3.9-bcd7be5c44d7816b2c516009ba08af8517a368ca.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/jetty-util-6.1.26-29faad662bef2f1b2169d43e53908737dbb30ca7.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/org.mortbay.jetty/jetty-util/6.1.26/e5642fe0399814e1687d55a3862aa5a3417226a9/jetty-util-6.1.26.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e5642fe0399814e1687d55a3862aa5a3417226a9"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-api-client-1.18.0-rc-dd1c94fe2c3cc7c0df8f6c310324faf3a61a5703.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.18.0-rc/45b0d00b78197d8a3047751443c09538117d188b/google-api-client-1.18.0-rc.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="45b0d00b78197d8a3047751443c09538117d188b"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-http-client-1.18.0-rc-4c9f4c305bd78a77c6a23de4822c34b584dd13f9.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.18.0-rc/880ad30d2b249a7591c195c2392646f1b146c139/google-http-client-1.18.0-rc.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="880ad30d2b249a7591c195c2392646f1b146c139"/>
+    <item
+        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/servlet-api-2.5-20081211-f780f66ccbfe9606cd7299f3ded8894c808ae23e.jar"
+        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/org.mortbay.jetty/servlet-api/2.5-20081211/22bff70037e1e6fa7e6413149489552ee2064702/servlet-api-2.5-20081211.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="22bff70037e1e6fa7e6413149489552ee2064702"/>
     <item
         dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-http-client-android-1.18.0-rc-0694812682c5be48f8b38f64c3957856da63e71a.jar"
         jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.18.0-rc/cc519375a59b88327d65b79172798e7e6417bc78/google-http-client-android-1.18.0-rc.jar"
@@ -56,23 +80,11 @@
         revision="19.1.0"
         sha1="2e66da15851f9f5b5079228f856c2f090ba98c38"/>
     <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-api-client-android-1.18.0-rc-17c9af8da3789d70d246c2e767a95db9b606bfc4.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.18.0-rc/5a61d590275464895d783fb1612418964e20162e/google-api-client-android-1.18.0-rc.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="5a61d590275464895d783fb1612418964e20162e"/>
-    <item
         dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/jackson-core-2.1.3-c4d61808e8b9d7f87b5609f909c60a74971135ef.jar"
         jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd"/>
-    <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-http-client-gson-1.18.0-rc-393a42fc59e4b7c33d82d2567ff6db4921d9508f.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-gson/1.18.0-rc/82647ac9ebf591b4517f8863ed4c84367cde0728/google-http-client-gson-1.18.0-rc.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="82647ac9ebf591b4517f8863ed4c84367cde0728"/>
     <item
         dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-http-client-jackson2-1.18.0-rc-bc16cecebe06a8589f8ba7cd6ddb1c338d94032a.jar"
         jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.18.0-rc/5cc2dc4e3ba7f626c1a9db4fc5d2460c22275474/google-http-client-jackson2-1.18.0-rc.jar"
@@ -85,18 +97,6 @@
         jumboMode="false"
         revision="19.1.0"
         sha1="27dcc83b2d76a52cceb84f3a5f05e9d8891163ed"/>
-    <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/jsr305-1.3.9-bcd7be5c44d7816b2c516009ba08af8517a368ca.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf"/>
-    <item
-        dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/jetty-util-6.1.26-29faad662bef2f1b2169d43e53908737dbb30ca7.jar"
-        jar="/Users/dave/.gradle/caches/modules-2/files-2.1/org.mortbay.jetty/jetty-util/6.1.26/e5642fe0399814e1687d55a3862aa5a3417226a9/jetty-util-6.1.26.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="e5642fe0399814e1687d55a3862aa5a3417226a9"/>
     <item
         dex="/Users/dave/DriveSign-off/DS/build/intermediates/pre-dexed/debug/google-oauth-client-jetty-1.18.0-rc-f4119800850d9ca140207811ca4e250b3a7fb768.jar"
         jar="/Users/dave/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client-jetty/1.18.0-rc/edd5feffead32ca91562b2b1c126f058f5978f1/google-oauth-client-jetty-1.18.0-rc.jar"

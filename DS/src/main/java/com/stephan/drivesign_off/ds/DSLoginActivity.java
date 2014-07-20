@@ -229,16 +229,6 @@ public class DSLoginActivity extends Activity implements DSGoogleDriveAPIDelegat
 
     @Override
     protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        if (requestCode == 2) {
-            boolean mResolvingError = false;
-            if (resultCode == RESULT_OK) {
-                AlertDialog alertDialog = alertDialogBuilder.setMessage("zou ingelogd moeten zijn").create();
-                alertDialog.show();
-            }
-        }
-
-
         if (requestCode == ACTIVITY_CREATE_FILE && resultCode == RESULT_OK) {
 
             // start the creation of the new file
