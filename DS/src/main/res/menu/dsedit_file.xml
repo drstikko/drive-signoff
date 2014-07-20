@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.stephan.drivesign_off.ds.DSEditFileActivity" >
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_add_student"
+        android:title="@string/action_add_student"
+        android:orderInCategory="99"
+        android:showAsAction="never" />
+
+    <item android:id="@+id/action_add_assignment"
+        android:title="@string/action_add_assignment"
+        android:orderInCategory="98"
+        android:showAsAction="never" />
+
+
+    <item android:id="@+id/action_save"
+        android:title="@string/action_save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom" />
+</menu>

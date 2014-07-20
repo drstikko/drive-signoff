@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.stephan.drivesign_off.ds.DSFileDescriptionRowFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:minWidth="150px"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/view_tablerow_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:minWidth="150px"
+        android:id="@+id/view_tablerow_subtitle"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_tablerow_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/view_tablerow_title"
+        android:layout_alignEnd="@+id/view_tablerow_title"
+        android:text="@string/hello_blank_fragment" />
+
+</RelativeLayout>
