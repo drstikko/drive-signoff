@@ -129,10 +129,10 @@ public class DSEditStudentAssignmentsActivity extends Activity {
             final String assignmentName = currentAssignment;
 
             CheckBox chk=new CheckBox(this);
-            chk.setText("Hello");
+            chk.setText("Check if finished");
             currentRow.addView(chk);
 
-            currentRow.setOnClickListener(new View.OnClickListener() {
+            chk.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
@@ -140,8 +140,10 @@ public class DSEditStudentAssignmentsActivity extends Activity {
                     // create text input for the alert
                     final EditText textInputField = new EditText(DSEditStudentAssignmentsActivity.this);
                     textInputField.setInputType(InputType.TYPE_CLASS_TEXT);
-
-
+                    // overwrite the new value for the assignment selected
+                    DSEditStudentAssignmentsActivity.this._assignmentBundle.putString(assignmentName,"V");
+                    DSEditStudentAssignmentsActivity.this.refreshAssignmentsTableLayout();
+                    /*
                     // build a dialog in which the user can set the value of th assignment
                     AlertDialog alertDialog = new AlertDialog.Builder(DSEditStudentAssignmentsActivity.this)
                             .setTitle("Edit the assignment")
@@ -166,7 +168,7 @@ public class DSEditStudentAssignmentsActivity extends Activity {
                             .create();
 
                     // show the alert
-                    alertDialog.show();
+                    alertDialog.show();*/
                 }
             });
 
