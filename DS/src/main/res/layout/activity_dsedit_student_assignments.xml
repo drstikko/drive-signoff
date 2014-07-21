@@ -6,10 +6,5 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/AppTheme"
-        android:background="@android:color/background_light"
-        android:id="@+id/assignment_table_layout"
-        android:orientation="vertical"
-        android:layout_margin="5dp"/>
-
+        android:id="@+id/assignment_table_layout" />
 </ScrollView>

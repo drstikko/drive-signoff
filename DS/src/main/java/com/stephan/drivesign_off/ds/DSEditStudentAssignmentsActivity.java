@@ -9,6 +9,7 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TableLayout;
 
@@ -126,6 +127,11 @@ public class DSEditStudentAssignmentsActivity extends Activity {
             // create the table row for the next student and add it to the table layout
             final DSAssignmentTableRow currentRow = new DSAssignmentTableRow(this, currentAssignment, this._assignmentBundle.getString(currentAssignment));
             final String assignmentName = currentAssignment;
+
+            CheckBox chk=new CheckBox(this);
+            chk.setText("Hello");
+            currentRow.addView(chk);
+
             currentRow.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -135,9 +141,10 @@ public class DSEditStudentAssignmentsActivity extends Activity {
                     final EditText textInputField = new EditText(DSEditStudentAssignmentsActivity.this);
                     textInputField.setInputType(InputType.TYPE_CLASS_TEXT);
 
+
                     // build a dialog in which the user can set the value of th assignment
                     AlertDialog alertDialog = new AlertDialog.Builder(DSEditStudentAssignmentsActivity.this)
-                            .setTitle("Edit assignment")
+                            .setTitle("Edit the assignment")
                             .setMessage("Enter a value for the assignment:")
                             .setView(textInputField)
                             .setPositiveButton("Save", new DialogInterface.OnClickListener() {
