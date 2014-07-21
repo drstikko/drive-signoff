@@ -141,6 +141,7 @@ public class DSEditStudentAssignmentsActivity extends Activity {
                     // create text input for the alert
                     final EditText textInputField = new EditText(DSEditStudentAssignmentsActivity.this);
                     textInputField.setInputType(InputType.TYPE_CLASS_TEXT);
+
                     // overwrite the new value for the assignment selected
                     DSEditStudentAssignmentsActivity.this._assignmentBundle.putString(assignmentName,"V");
                     DSEditStudentAssignmentsActivity.this.refreshAssignmentsTableLayout();
