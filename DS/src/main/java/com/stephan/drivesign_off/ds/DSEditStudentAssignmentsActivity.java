@@ -127,6 +127,7 @@ public class DSEditStudentAssignmentsActivity extends Activity {
             // create the table row for the next student and add it to the table layout
             final DSAssignmentTableRow currentRow = new DSAssignmentTableRow(this, currentAssignment, this._assignmentBundle.getString(currentAssignment));
             final String assignmentName = currentAssignment;
+
             //add checkbox to table row layout
             CheckBox chk=new CheckBox(this);
             chk.setText("Check if finished");
