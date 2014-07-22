@@ -73,7 +73,7 @@ public class DSExcelWorksheet {
         int currentIndex = 0;
 
         // process rows
-        //comment john
+        //comment john visser
         while (worksheetRowIterator.hasNext()) {
 
             // get the row to be processed
