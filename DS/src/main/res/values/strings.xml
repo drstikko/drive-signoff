@@ -7,12 +7,14 @@
     <string name="title_activity_dsdrive_files_overview">All files</string>
     <string name="title_activity_dsedit_file">Edit</string>
     <string name="action_add">New file</string>
+    <string name="action_wizard">Wizard</string>
     <string name="action_sync">Synchronize</string>
     <string name="title_activity_dsadd_file">New file</string>
     <string name="editFileNameHint">File name</string>
     <string name="addFileConfirmButton">Create file</string>
     <string name="action_add_student">New student</string>
     <string name="action_add_assignment">New assignment</string>
+    <string name="action_init_assignments">Initialize assignments</string>
     <string name="title_activity_dsadd_student">DSAddStudentActivity</string>
     <string name="hint_student_id">Student ID</string>
     <string name="hint_student_name">Name</string>
@@ -23,5 +25,11 @@
     <string name="action_save">Save</string>
     <string name="add_assignment_name_hint">Assignment name</string>
     <string name="add_assignment_confirm_title">Save</string>
+    <string name="title_activity_wizard">WizardActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="step_one">Step One</string>
+    <string name="step_two">Step Two</string>
+    <string name="google_drive_user">GOOGLE_USER</string>
+    <string name="title_activity_dsinit_assignments">DSInitAssignmentsActivity</string>
 
 </resources>

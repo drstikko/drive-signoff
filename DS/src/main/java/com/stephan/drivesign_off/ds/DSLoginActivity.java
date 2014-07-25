@@ -4,13 +4,17 @@ import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.app.ActionBar;
+import android.widget.TextView;
+
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
@@ -125,6 +129,14 @@ public class DSLoginActivity extends Activity implements DSGoogleDriveAPIDelegat
             // add the view with layout
             this._filesTableView.addView(newView, layoutParams);
         }
+        if(allFiles.length==0){
+            LinearLayout layout = (LinearLayout) findViewById(R.id.login_layout);
+            TextView tv = new TextView(this);
+            tv.setText("There were no files found in "+_accountName+"\'s Google Drive that were created by this App");
+            tv.setTextColor(Color.RED);
+            tv.setTextSize(20);
+            layout.addView(tv);
+        }
     }
 
     /**
@@ -237,7 +249,7 @@ public class DSLoginActivity extends Activity implements DSGoogleDriveAPIDelegat
         } else if (requestCode == INTENT_ACCOUNT_CHOOSER && resultCode == RESULT_OK) {
 
             this._accountName = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-
+            ((TextView)findViewById(R.id.account_name)).setText("Logged in on " + _accountName + "\'s Google Drive");
             // the account has been chosen successfully so connect to the API
             GoogleAccountCredential credentials = GoogleAccountCredential.usingOAuth2(this.getApplicationContext(), Collections.singleton(DriveScopes.DRIVE));
             credentials.setSelectedAccountName(data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME));
@@ -281,6 +293,14 @@ public class DSLoginActivity extends Activity implements DSGoogleDriveAPIDelegat
                 this.startActivityForResult(createFileIntent, ACTIVITY_CREATE_FILE);
                 returnValue = true;
                 break;
+
+           /* case R.id.action_wizard:
+
+                // create a new intent for file adding activity
+                Intent wizardIntent = new Intent(this, WizardActivity.class);
+                this.startActivityForResult(wizardIntent,3);
+                returnValue = true;
+                break;*/
 
             default:
 

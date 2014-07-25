@@ -55,7 +55,7 @@ public class DSAssignmentTableRow extends TableRow {
         this._assignmentValue = currentValue;
 
         // set background color
-        this.setBackgroundColor(Color.LTGRAY);
+        this.setBackgroundColor(Color.WHITE);
 
         // load the layout and add the view
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -91,5 +91,10 @@ public class DSAssignmentTableRow extends TableRow {
     public String assignmentName() {
 
         return this._assignment;
+    }
+
+    public TextView get_assignmentTitleView() {
+
+        return this._assignmentValueDescriptionTextView;
     }
 }

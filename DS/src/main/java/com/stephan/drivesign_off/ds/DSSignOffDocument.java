@@ -66,7 +66,7 @@ public class DSSignOffDocument {
      * @return                  DSSignOffDocument
      */
     static DSSignOffDocument documentFromExcelWorksheet(DSExcelWorksheet excelWorksheet) {
-
+        int Cols = 0;
         // get the row iterator from the worksheet
         Iterator<DSExcelWorksheetRow> rowIterator = excelWorksheet.rowIterator();
         ArrayList<DSStudent> allStudents = new ArrayList<DSStudent>();
@@ -94,6 +94,7 @@ public class DSSignOffDocument {
                     // add the assignment type
                     allAssignments.add(currentCell.cellValue());
                 }
+                Cols++;
             }
         }
 
@@ -107,11 +108,17 @@ public class DSSignOffDocument {
             DSStudent currentStudent = new DSStudent();
             DSExcelWorksheetCell currentCell;
 
+            int tmpCols = Cols;
+            while(tmpCols>2) {
+                currentStudent.setSignedOffValueForType("0.0", allAssignments.get(tmpCols - 1 - 2));
+                tmpCols--;
+            }
+
             while (cellIterator.hasNext()) {
 
                 // set the current cell
                 currentCell = cellIterator.next();
-
+                currentCellIndex = currentCell.cellIdentifier().charAt(0)-64-1; //fix for misplacing values
                 switch (currentCellIndex) {
 
                     // the student id case
@@ -131,7 +138,7 @@ public class DSSignOffDocument {
                 }
 
                 // increment counter
-                currentCellIndex++;
+                //currentCellIndex++;
             }
 
             // add the parsed student to the list

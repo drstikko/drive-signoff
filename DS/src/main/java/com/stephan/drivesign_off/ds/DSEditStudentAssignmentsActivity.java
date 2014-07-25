@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
@@ -12,6 +13,12 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Activity which can be used for editing the assignment values of a specified student.
@@ -104,6 +111,19 @@ public class DSEditStudentAssignmentsActivity extends Activity {
         this.finish();
     }
 
+    public static Date getDateFromCOMDate(float comtime) {
+        String floatstr = String.valueOf(comtime);
+        String [] ss = floatstr.split("\\.");
+      //  long nulltime = -2209183200000L;
+        long nulltime = -2209161600000L;
+        long dayms = 86400000;
+        int days = Integer.valueOf(ss[0]);
+        float prop = comtime - days;
+        long cdayms = Math.round(dayms * prop);
+        long time = nulltime + days*dayms + cdayms;
+        Date d = new Date(time);
+        return d;
+    }
     /**
      * Refreshes all assignments views in the table layout.
      */
@@ -116,21 +136,72 @@ public class DSEditStudentAssignmentsActivity extends Activity {
         TableLayout.LayoutParams layoutParams = new TableLayout.LayoutParams(TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 5, 0, 5);
 
+        //final DSAssignmentTableRow currentRow = new DSAssignmentTableRow(this, "OpdrachtNaam");
+        TableRow header = new TableRow(this);
+        header.setBackgroundColor(Color.GREEN);
+        TextView tmpView = new TextView(this);
+        tmpView.setText("Opdrachtnaam");
+        header.addView(tmpView);
+        boolean noWeekHeader = false;
+        this._assignmentsTableLayout.addView(header);
+
         // process each student
-        for (String currentAssignment : this._assignmentBundle.keySet()) {
+        for (final String currentAssignment : this._assignmentBundle.keySet()) {
 
             // continue for the student name
             if (currentAssignment.equals(ASSIGNMENT_BUNDLE_STUDENT_NAME)) {
                 continue;
             }
 
+
+
             // create the table row for the next student and add it to the table layout
-            final DSAssignmentTableRow currentRow = new DSAssignmentTableRow(this, currentAssignment, this._assignmentBundle.getString(currentAssignment));
+            String date_ass = "";
+
+            if(this._assignmentBundle.getString(currentAssignment).equals("0.0")) {
+                date_ass = "0.0";
+            }else if(this._assignmentBundle.getString(currentAssignment).equals("1.0")){
+                date_ass = this._assignmentBundle.getString(currentAssignment);
+            }else {
+                if (this._assignmentBundle.getString(currentAssignment).contains("-")) {
+                    date_ass = this._assignmentBundle.getString(currentAssignment);
+                } else {
+                    try{
+                        date_ass = new SimpleDateFormat("yyyy-MM-dd").format(getDateFromCOMDate(Float.valueOf(this._assignmentBundle.getString(currentAssignment))));
+                        this._assignmentBundle.putString(currentAssignment, date_ass);
+                    }
+                    catch (NumberFormatException e){
+                        date_ass = this._assignmentBundle.getString(currentAssignment);
+                    }
+
+                }
+            }
+
+            if (currentAssignment.startsWith("Week") && !noWeekHeader){
+                header = new TableRow(this);
+                header.setBackgroundColor(Color.YELLOW);
+                tmpView = new TextView(this);
+                tmpView.setText("Aanwezigheid");
+                header.addView(tmpView);
+                noWeekHeader = true;
+                this._assignmentsTableLayout.addView(header);
+            }
+
+            final DSAssignmentTableRow currentRow = new DSAssignmentTableRow(this, currentAssignment, date_ass);
             final String assignmentName = currentAssignment;
 
+            if(currentAssignment.startsWith("Week")){
+                //currentRow.get_assignmentTitleView().setVisibility(View.INVISIBLE);
+            }
+            
             //add checkbox to table row layout
             CheckBox chk=new CheckBox(this);
-            chk.setText("Check if finished");
+           // chk.setText("Check for finished");
+
+            if(!this._assignmentBundle.getString(currentAssignment).equals("0.0")){
+                chk.setChecked(true);
+            }
+
             currentRow.addView(chk);
 
             chk.setOnClickListener(new View.OnClickListener() {
@@ -142,8 +213,23 @@ public class DSEditStudentAssignmentsActivity extends Activity {
                     final EditText textInputField = new EditText(DSEditStudentAssignmentsActivity.this);
                     textInputField.setInputType(InputType.TYPE_CLASS_TEXT);
 
+                    String date = null;
+
+                    if(currentAssignment.startsWith("Week")) {
+                        date = "1.0";
+                    }
+                    else{
+                        date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+                    }
+
+
+                    if(!_assignmentBundle.getString(assignmentName).equals("0.0")){
+                        date = "0.0";
+                    }
+
                     // overwrite the new value for the assignment selected
-                    DSEditStudentAssignmentsActivity.this._assignmentBundle.putString(assignmentName,"V");
+
+                    DSEditStudentAssignmentsActivity.this._assignmentBundle.putString(assignmentName, date);
                     DSEditStudentAssignmentsActivity.this.refreshAssignmentsTableLayout();
                     /*
                     // build a dialog in which the user can set the value of th assignment

@@ -39,6 +39,7 @@ public class DSEditFileActivity extends Activity implements DSGoogleDriveAPIDele
     static int ACTIVITY_ADD_STUDENT_REQUEST_CODE    =   5;
     static int ACTIVITY_ADD_ASSIGNMENT_REQUEST_CODE =   6;
     static int ACTIVITY_EDIT_STUDENT_REQUEST_CODE   =   7;
+    static int ACTIVITY_INIT_ASSIGNMENTS_REQUEST_CODE   =   8;
 
     /**
      * The activity indicator which shows file download process.
@@ -137,8 +138,15 @@ public class DSEditFileActivity extends Activity implements DSGoogleDriveAPIDele
             DSGoogleDriveAPI.defaultManager().saveFileWithIdentifierAndDocumentUsingContext(this._fileIdentifier, this._studentsDocument, this.getApplicationContext(), delegate);
             this._isSavingInfo = true;
         }
+        else if (id == R.id.action_init_assignments) {
 
-        // process by the super class
+            // create the intent for adding a new assignment
+            Intent initAssignmentsIntent = new Intent(this, DSInitAssignmentsActivity.class);
+            this.startActivityForResult(initAssignmentsIntent, ACTIVITY_INIT_ASSIGNMENTS_REQUEST_CODE);
+            return true;
+        }
+
+    // process by the super class
         return super.onOptionsItemSelected(item);
     }
 
@@ -147,7 +155,7 @@ public class DSEditFileActivity extends Activity implements DSGoogleDriveAPIDele
 
         // only save when the document is available
         if (this._studentsDocument != null && !this._isSavingInfo) {
-
+        //[to fix -> convert float date values to text values, as in DSEditStudentAssignmentsActivity.java]
             // perform save of the document
             DSGoogleDriveAPI.defaultManager().saveFileWithIdentifierAndDocumentUsingContext(this._fileIdentifier, this._studentsDocument, this.getApplicationContext(), null);
             this._isSavingInfo = true;
@@ -198,7 +206,46 @@ public class DSEditFileActivity extends Activity implements DSGoogleDriveAPIDele
                     studentIterator.next().setSignedOffValueForType("", assignmentName);
                 }
             }
-        } else if (requestCode == ACTIVITY_EDIT_STUDENT_REQUEST_CODE && resultCode == RESULT_OK) {
+
+        }  else if (requestCode == ACTIVITY_INIT_ASSIGNMENTS_REQUEST_CODE && resultCode == RESULT_OK) {
+
+            // retrieve the name of the new assignment
+            String assignmentDefaultName = data.getStringExtra(DSInitAssignmentsActivity.ACTIVITY_RESULT_ASSIGNMENT_NAME);
+            int numberOfWeeks = Integer.parseInt(data.getStringExtra(DSInitAssignmentsActivity.ACTIVITY_RESULT_ASSIGNMENT_WEEKS));
+            int numberOfAssignments = Integer.parseInt(data.getStringExtra(DSInitAssignmentsActivity.ACTIVITY_RESULT_ASSIGNMENT_NUMBER));
+
+            if (assignmentDefaultName != null) {
+
+                for (int i=1; i<numberOfWeeks+1; i++) {
+                    this._studentsDocument.addAssignmentWithName("Week"+String.valueOf(i));
+                    // set a default value for all assignments and all students
+                    Iterator<DSStudent> studentIterator = this._studentsDocument.studentIterator();
+
+                    while (studentIterator.hasNext()) {
+                        studentIterator.next().setSignedOffValueForType("", "Week"+String.valueOf(i));
+                    }
+                }
+
+            }
+
+            // check the value and add the name
+            if (assignmentDefaultName != null) {
+
+                for (int i=1; i<numberOfAssignments+1; i++) {
+                    this._studentsDocument.addAssignmentWithName(assignmentDefaultName+String.valueOf(i));
+                    // set a default value for all assignments and all students
+                    Iterator<DSStudent> studentIterator = this._studentsDocument.studentIterator();
+
+                    while (studentIterator.hasNext()) {
+                        studentIterator.next().setSignedOffValueForType("", assignmentDefaultName+String.valueOf(i));
+                    }
+                }
+
+            }
+
+        }
+
+        else if (requestCode == ACTIVITY_EDIT_STUDENT_REQUEST_CODE && resultCode == RESULT_OK) {
 
             // a bundle is included which includes all new values for the current student
             Bundle resultBundle = data.getBundleExtra(DSEditStudentAssignmentsActivity.RESULT_EXTRA_CONTENT_ASSIGNMENTS);

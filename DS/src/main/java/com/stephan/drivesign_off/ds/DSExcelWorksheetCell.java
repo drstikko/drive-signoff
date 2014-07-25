@@ -71,4 +71,9 @@ public class DSExcelWorksheetCell {
 
         this._cellValue = cellValue;
     }
+
+    public String cellIdentifier() {
+
+        return this._cellIdentifier;
+    }
 }

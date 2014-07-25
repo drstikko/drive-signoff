@@ -8,6 +8,11 @@
         android:orderInCategory="100"
         android:showAsAction="never" />
 
+    <item android:id="@+id/action_init_assignments"
+        android:title="@string/action_init_assignments"
+        android:orderInCategory="98"
+        android:showAsAction="never" />
+
     <item android:id="@+id/action_add_student"
         android:title="@string/action_add_student"
         android:orderInCategory="99"
@@ -17,7 +22,6 @@
         android:title="@string/action_add_assignment"
         android:orderInCategory="98"
         android:showAsAction="never" />
-
 
     <item android:id="@+id/action_save"
         android:title="@string/action_save"

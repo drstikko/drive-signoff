@@ -1,5 +1,6 @@
 package com.stephan.drivesign_off.ds;
 
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Xml;
@@ -10,6 +11,8 @@ import com.google.api.services.drive.Drive;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.ZipEntry;
