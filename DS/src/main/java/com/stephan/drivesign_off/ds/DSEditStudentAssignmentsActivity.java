@@ -191,7 +191,7 @@ public class DSEditStudentAssignmentsActivity extends Activity {
             final String assignmentName = currentAssignment;
 
             if(currentAssignment.startsWith("Week")){
-                //currentRow.get_assignmentTitleView().setVisibility(View.INVISIBLE);
+                currentRow.get_assignmentTitleView().setVisibility(View.INVISIBLE);
             }
             
             //add checkbox to table row layout
