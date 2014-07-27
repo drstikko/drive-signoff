@@ -158,7 +158,7 @@ public class DSEditStudentAssignmentsActivity extends Activity {
             // create the table row for the next student and add it to the table layout
             String date_ass = "";
 
-            if(this._assignmentBundle.getString(currentAssignment).equals("0.0")) {
+            if(this._assignmentBundle.getString(currentAssignment).equals("0.0") || this._assignmentBundle.getString(currentAssignment).isEmpty()) {
                 date_ass = "0.0";
             }else if(this._assignmentBundle.getString(currentAssignment).equals("1.0")){
                 date_ass = this._assignmentBundle.getString(currentAssignment);
@@ -197,8 +197,9 @@ public class DSEditStudentAssignmentsActivity extends Activity {
             //add checkbox to table row layout
             CheckBox chk=new CheckBox(this);
            // chk.setText("Check for finished");
+            chk.setChecked(false);
 
-            if(!this._assignmentBundle.getString(currentAssignment).equals("0.0")){
+            if(!date_ass.equals("0.0")){
                 chk.setChecked(true);
             }
 
